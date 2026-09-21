@@ -26,18 +26,18 @@ class ListActivity : LoadingActivity() {
     private lateinit var mAdapter: ListAdapter
 
     private val viewBinding: ActivityListBinding by inflate()
-    
+
     private lateinit var stateView: StateView
-    
+
     private var userID: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(viewBinding.root)
         initToolbar(viewBinding.toolbarLayout.toolbar, R.string.app_list, true)
-        
+
         userID = intent.getIntExtra("userID", 0)
-        
+
         initViewModel()
         initRecyclerView()
     }
@@ -95,7 +95,7 @@ class ListActivity : LoadingActivity() {
         menuInflater.inflate(R.menu.menu_search, menu)
         val searchItem = menu.findItem(R.id.list_search)
         val searchView = searchItem?.actionView as? SearchView
-        
+
         searchView?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
@@ -106,7 +106,7 @@ class ListActivity : LoadingActivity() {
                 return true
             }
         })
-        
+
         return true
     }
 
