@@ -28,7 +28,7 @@ ext {
     compileSdkVersion = 34
     targetSdkVersion = 34
     buildToolsVersion = "34.0.0"
-    javaVersion = JavaVersion.VERSION_21
+    javaVersion = JavaVersion.VERSION_17
     abiFilters = "armeabi-v7a,arm64-v8a"
     localTest = false
     isMasterPkg = true
